@@ -12,6 +12,7 @@ const server=http.createServer(app);
 const io=socketio(server,{
     cors: { origin: "http://localhost:3000", methods: ["GET", "POST"] }});
 app.use(router);
+app.use(cors)
 
 io.on('connection',(socket)=>{
 
