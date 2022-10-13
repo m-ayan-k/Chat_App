@@ -1,6 +1,7 @@
 const express=require('express');
 const socketio=require('socket.io');
 const http=require('http');
+const cors = require('cors');
 
 const {addUser, removeUser, getUser, getUsersInRoom}=require('./user.js');
 const PORT=process.env.PORT|| 5000;
@@ -10,9 +11,9 @@ const { mainModule } = require('process');
 const app=express();    
 const server=http.createServer(app);
 const io=socketio(server,{
-    cors: { origin: "http://localhost:3000", methods: ["GET", "POST"] }});
+    cors: { origin: "https://pr0ject-01.herokuapp.com/", methods: ["GET", "POST"] }});
 app.use(router);
-app.use(cors)
+app.use(cors());
 
 io.on('connection',(socket)=>{
 

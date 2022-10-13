@@ -17,7 +17,7 @@ export default function Chat() {
 
   const location=useLocation();
   const navigate = useNavigate();
-  const Endpoint='localhost:5000';
+  const Endpoint='https://pr0ject-01.herokuapp.com/';
 
 
   useEffect(()=>{
